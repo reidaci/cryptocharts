@@ -25,7 +25,7 @@ ngOnInit() {
     console.log(this.coinName);
 
     this.chart = new Chart('canvas', {
-      type: 'pie',
+      type: 'bar',
       data: {
         labels: this.coinName,
         datasets: [
@@ -37,6 +37,17 @@ ngOnInit() {
             borderWidth: 3,
           },
         ],
+
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          },
+          x: {
+            beginAtZero: true
+          }
+        }
       },
     });
   });
